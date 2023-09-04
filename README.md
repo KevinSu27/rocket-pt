@@ -1,5 +1,5 @@
 <div align="center">
-  <img alt="Logo" width="120" height="120" src="./pic/logo.png">
+  <img alt="Logo" width="256" height="256" src="./pic/logo.png">
   <h1>Rocket PT</h1>
   <h2>交流群:168814655</h2>
   <h3><span>后端 | <a href="https://github.com/PlexPt/rocket-ui">前端</a></span></h3>
@@ -7,13 +7,13 @@
 </div>
 
 
-基于 Java 的私有 BitTorrent 站点系统，可以提供高质量的种子资源和简单易用的界面。
+Rocket PT 是一个基于 Java 的私有 BitTorrent 站点系统，可以提供高质量的连接服务和简单易用的界面。
 
-这个项目采用了最新的 Java 技术和框架，如 Spring Boot ，来提供高效、稳定和可扩展的性能。同时，这个项目还采用了数据库管理系统，如 MySQL，来存储所有的种子资源。
+Rocket PT 采用了最新的 Java 技术和框架，如 Spring Boot 3.0 ，来提供高效、稳定和可扩展的服务。
 
-项目采用了前后端分离的架构，使用了现代化的技术和工具，如 Vue.js 和 axios 作为前端框架，与后端 Java 代码进行交互。这样，我们可以更好地利用前端框架的优势，提高用户体验和交互性，提高项目的稳定性和可扩展性。
+Rocket PT 采用了前后端分离的架构，使用了现代化的技术和工具，如 Vue3 作为前端框架。这样可以更好地利用前端框架的优势，提高用户体验和交互性，提高项目的稳定性和可扩展性。
 
-在后端方面，我们使用了最新的 Java 技术和框架，如 Spring Boot 和 Spring Security 等，提供了高效的 RESTful API 与前端进行交互。这样，我们可以更快速地处理大量的请求和数据，并且更好地支持高并发访问。
+Rocket PT 后端使用了最新的 Java 技术和框架，提供了高效的 RESTful API 与前端进行交互。这样，我们可以更快速地处理大量的请求和数据，并且更好地支持高并发访问。
 
 这个项目非常适合那些寻求高质量种子资源和良好用户体验的用户。它提供了简单易用的界面，让用户可以轻松地搜索和下载种子。同时，这个项目还提供了丰富的社区功能，如论坛和评论，让用户可以与其他用户交互并贡献。
 
@@ -28,9 +28,9 @@
 
 前端框架：TypeScript、Vite3、Vue3、Element Plus、axios
 
-数据库：MySQL
+数据库：MySQL 8.0
 
-版本控制工具：Git
+数据库版本控制：Flyway
 
 部署工具：Docker
 
@@ -40,11 +40,7 @@
 
 ## 支持作者
 
-您好，我们非常感激您对此项目的关注和支持。我们一直在努力，提供最有价值和易于理解的指南。如果您觉得我们的项目对您有所帮助，请考虑捐赠支持我们。您的捐赠将帮助我们不断完善项目内容，为您提供更好的服务，并吸引更多的读者和使用者。谢谢您的支持！赞助者将会展示在本页面。
-
-| 微信         | 支付宝           |  
-| ------------ | --------------- |  
-| <img src="https://user-images.githubusercontent.com/15922823/217595380-ed95381c-271d-4aba-98a1-3cfd8cf5ed73.png" width="300"/> | <img src="https://user-images.githubusercontent.com/15922823/215301134-1021dc8e-fdd8-4eec-bae4-05ec4a529b42.png" width="300"/> |  
+点一个Star即可支持。
 
 ## 部署
 正在编写
@@ -52,13 +48,15 @@
 ## 参与开发
 [提需求建议，提Bug](https://github.com/PlexPt/rocket-pt/issues/new/choose)
 
-##### 开发进度见 [TODO](./TODO.md)
+####  [接口规范](./doc/README.md)
+
 #### 参与步骤
 
 1. 在TODO列表或Issue列表找到要开发的功能
 2. fork本仓库 然后clone到本地开发
 3. 开一个issus，或者标记已有的issue，开始编写
-4. 写完发pr
+4. 写完发pr，等待review
+5. review完成，合并成功
 
 ## 从NexusPHP迁移
 
@@ -71,3 +69,5 @@
 - [NexusPHP](https://github.com/zjutjh/NexusPHP)  （原版）
 - [virus](https://github.com/gaoluhua99/virus)
 - [admin3](https://github.com/cjbi/admin3)
+- https://github.com/BitSapling/Sapling
+- https://github.com/dampcake/bencode

@@ -2,6 +2,7 @@ package com.rocketpt.server.common.base;
 
 import org.springframework.context.MessageSource;
 import org.springframework.context.i18n.LocaleContextHolder;
+import org.springframework.context.support.ReloadableResourceBundleMessageSource;
 
 import java.util.Objects;
 
@@ -11,8 +12,16 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @UtilityClass
 public class I18nMessage {
-    private static MessageSource messageSource;
 
+    static {
+        ReloadableResourceBundleMessageSource messageSource =
+                new ReloadableResourceBundleMessageSource();
+        messageSource.setCacheSeconds(5);
+        messageSource.setBasenames("classpath:i18n/message");
+        I18nMessage.init(messageSource);
+    }
+
+    private static MessageSource messageSource;
 
     public static void init(MessageSource messageSource) {
         Objects.requireNonNull(messageSource, "MessageSource can't be null");

@@ -6,14 +6,12 @@ package com.rocketpt.server.common;
 public interface Constants {
 
     String TOKEN_HEADER_NAME = "Authorization";
-
-
     String SESSION_CURRENT_USER = "currentUser";
 
     /**
      * 菜单根id
      */
-    long RESOURCE_ROOT_ID = 1L;
+    Integer RESOURCE_ROOT_ID = 1;
 
     interface Order {
         String DEFAULT_ORDER_TYPE = "desc";
@@ -37,6 +35,22 @@ public interface Constants {
          * 已完成但未测试
          */
         String FINISHED_NOT_TEST = " (已完成但未测试)";
+
+    }
+
+    interface Source {
+        String PREFIX = "[RKT] ";
+
+        String NAME = "rocket pt";
+    }
+
+    interface Announce {
+
+        String PROTOCOL = "https";
+
+        String HOSTNAME = "rocket.pt.local";
+
+        Integer PORT = 9113;
 
     }
 }

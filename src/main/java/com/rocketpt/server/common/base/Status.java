@@ -1,9 +1,7 @@
 package com.rocketpt.server.common.base;
 
 /**
- *
  * 返回值状态码
- *
  *
  * @author liyue
  * @version v1
@@ -15,7 +13,7 @@ public enum Status {
     /**
      * 请求执行成功
      */
-    SUCCESS(200, "操作成功"),
+    SUCCESS(0, "操作成功"),
 
     /**
      * 请求验证失败
@@ -51,16 +49,16 @@ public enum Status {
 
     private String msg;
 
-    Status(int code, String msg){
+    Status(int code, String msg) {
         this.code = code;
         this.msg = msg;
     }
 
-    public int getCode(){
+    public int getCode() {
         return this.code;
     }
 
-    public String getMsg(){
+    public String getMsg() {
         return this.msg;
     }
 }

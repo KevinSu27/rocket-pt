@@ -7,11 +7,15 @@ spring:
     name: rocket-pt
   profiles:
     active: dev
+  main:
+    allow-circular-references: true
   data:
     web:
       pageable:
         one-indexed-parameters: true
-
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
   mail:
     host: smtp.qq.com
     username: ss@qq.com
@@ -36,6 +40,21 @@ spring:
       maximum-pool-size: 500
       minimum-idle: 10
       read-only: false
+  flyway:
+    # 是否启用flyway
+    enabled: true
+    table: t_flyway_schema_history
+    #若启动环境中的的数据库中有数据，但是没有flyway的历史表时，
+    #false--启动会报错，true--继续生成flyway历史表完成脚本
+    baseline-on-migrate: true
+    # 执行时标记的tag 默认为<<Flyway Baseline>>
+    #baseline-description: <<Flyway Baseline>>
+    # 检测迁移脚本的路径是否存在，如不存在，则抛出异常
+    fail-on-missing-locations: false
+    # 脚本位置
+    #locations: classpath:db/migration
+    # 在迁移时，是否校验脚本，假设V1.0__初始.sql已经迁移过了，在下次启动时会校验该脚本是否有变更过，则抛出异常
+    validate-on-migrate: false
 
 
 #mybatis
@@ -70,3 +89,56 @@ pagehelper:
 logging:
   file:
     path: logs
+  level:
+    root: info
+    org.springframework: info
+
+
+# springdoc-openapi项目配置
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    tags-sorter: alpha
+    operations-sorter: alpha
+  api-docs:
+    path: /v3/api-docs
+  group-configs:
+    - group: 'default'
+      paths-to-match: '/**'
+      packages-to-scan: com.rocketpt.server
+  default-flat-param-object: true
+
+# knife4j的增强配置，不需要增强可以不配
+knife4j:
+  enable: true
+  setting:
+    language: zh_cn
+#    enable-swagger-models: true
+#    enable-document-manage: true
+    swagger-model-name: 实体类列表
+
+  documents:
+    - name: 接口基础
+      locations: classpath:doc/base/*
+      group: default
+
+
+
+############## Sa-Token 配置 (文档: https://sa-token.cc) ##############
+sa-token:
+  # token名称 (同时也是cookie名称)
+  token-name: token
+  # token有效期，单位s 默认30天 2592000, -1代表永不过期
+  timeout: 2592000
+  # token临时有效期 (指定时间内无操作就视为token过期) 单位: 秒
+  activity-timeout: -1
+  # 是否允许同一账号并发登录 (为true时允许一起登录, 为false时新登录挤掉旧登录)
+  is-concurrent: true
+  # 在多人登录同一账号时，是否共用一个token (为true时所有登录共用一个token, 为false时每次登录新建一个token)
+  is-share: true
+  # token风格
+  token-style: simple-uuid
+  # 是否输出操作日志
+  is-log: false
+  # jwt秘钥
+#  jwt-secret-key: xxxxxxxxxxxxxxxx
